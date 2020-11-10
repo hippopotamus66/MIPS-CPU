@@ -10,14 +10,14 @@ or_gate or1(.x(func[0]), .y(func[3]), .z(out1));
 and_gate and1(.x(out1), .y(alu_op[1]), .z(alu_ctrl[0]));
 
 not_gate not1(.x(func[2]), .z(notfunc));
-not_gate not1(.x(alu_op[1]), .z(notalu));
+not_gate not2(.x(alu_op[1]), .z(notalu));
 or_gate or2(.x(notfunc), .y(notalu), .z(ut1));
-and_gate and1(.x(out1), .y(alu_op[1]), .z(alu_ctrl[1]));
+and_gate and2(.x(out1), .y(alu_op[1]), .z(alu_ctrl[1]));
 
-and_gate and2(.x(func[1]), .y(alu_op[1]), .z(out2));
-or_gate or1(.x(out2), .y(alu_op[0]), .z(alu_ctrl[2]));
+and_gate and3(.x(func[1]), .y(alu_op[1]), .z(out2));
+or_gate or3(.x(out2), .y(alu_op[0]), .z(alu_ctrl[2]));
 
-not_gate not2(.x(alu_op[0]), .z(notalu1));
-and_gate and3(.x(notalu1), .y(alu_op[0]), .z(alu_ctrl[3]));
+not_gate not3(.x(alu_op[0]), .z(notalu1));
+and_gate and4(.x(notalu1), .y(alu_op[0]), .z(alu_ctrl[3]));
 
 endmodule
