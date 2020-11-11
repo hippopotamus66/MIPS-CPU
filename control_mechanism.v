@@ -1,7 +1,7 @@
 module control_mechanism(opcode,alu_op, jump,reg_dst,mem_to_reg,branch,mem_read,mem_write,alu_src,reg_write);  
 
 input[5:0] opcode;  //bits 26:31 of instruction  
-reg notop0, notop1, notop2, notop3, notop4, notop5, r_format, lw, sw, beq;
+wire notop0, notop1, notop2, notop3, notop4, notop5, r_format, lw, sw, beq;
 output jump, reg_dst,mem_to_reg,branch,mem_read,mem_write,alu_src,reg_write;
 output [1:0] alu_op;
 

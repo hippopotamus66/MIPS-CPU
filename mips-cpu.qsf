@@ -43,47 +43,83 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:37:02  NOVEMBER 09, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE ce361_CPU_VHDL/lib/dffr_a.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/xor_gate.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/SUB_32bit_tb.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/SUB_32bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/SUB_1bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/SLT_signed.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/SLT.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/sll_32bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/sll_1bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/or_gate_32.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/or_gate.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/or_32bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/or_6To1.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/or_1bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/not_gate.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/nor_gate_32.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/nor_gate.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/nor_32bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/nand_gate_n.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/nand_gate_32.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/nand_gate.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/mux8_1_32bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/mux8_1_1bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/mux_n.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/mux_32to1.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/mux_32.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/mux_30.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/mux_5.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/mux_3bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/mux.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/fulladder_temp.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/fulladder_32.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/full_adder_32bit_tb.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/full_adder_32bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/full_adder_1bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/Full_Adder.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/eecs361_gates.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/eecs361.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/dec_n.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/dec_32.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/and_gate_n.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/and_gate_32.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/and_gate.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/and_32bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/and_6To1.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/and_1bit.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/ALUCU.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/ALU_tb.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/ALU.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/adder_32.vhd
+set_global_assignment -name VHDL_FILE ce361_ALU_VHDL/adder_30.vhd
+set_global_assignment -name VHDL_FILE ce361_CPU_VHDL/lib/register_bitslice.vhd
+set_global_assignment -name VHDL_FILE ce361_CPU_VHDL/lib/reg_file_bitslice.vhd
+set_global_assignment -name VHDL_FILE ce361_CPU_VHDL/lib/reg_file.vhd
+set_global_assignment -name VHDL_FILE ce361_CPU_VHDL/lib/extender.vhd
 set_global_assignment -name VERILOG_FILE mips_cpu.v
 set_global_assignment -name VHDL_FILE ece361_alu_vhdl/ece361_alu_vhdl/adder_32.vhd
-set_global_assignment -name VERILOG_FILE ../../sll_32.v
 set_global_assignment -name LICENSE_FILE ce361_CPU_Verilog/data/unsigned_sum.dat
 set_global_assignment -name LICENSE_FILE ce361_CPU_Verilog/data/sort_corrected_branch.dat
 set_global_assignment -name LICENSE_FILE ce361_CPU_Verilog/data/bills_branch.dat
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/xor_gate_n.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/xor_gate_32.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/xor_gate.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/xnor_gate_n.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/xnor_gate_32.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/xnor_gate.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/syncram.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/sram.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/or_gate_n.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/or_gate_32.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/or_gate.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/not_gate_n.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/not_gate_32.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/not_gate.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/nor_gate_n.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/nor_gate_32.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/nor_gate.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/nand_gate_n.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/nand_gate_32.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/nand_gate.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/mux_n.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/mux_32.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/mux.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/dffr_a.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/dffr.v
 set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/dff.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/dec_n.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/and_gate_n.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/and_gate_32.v
-set_global_assignment -name VERILOG_FILE ce361_CPU_Verilog/lib/and_gate.v
 set_global_assignment -name VERILOG_FILE control_mechanism.v
 set_global_assignment -name VERILOG_FILE alu_control_block.v
 set_global_assignment -name VERILOG_FILE nand_gate_6.v
-set_global_assignment -name VERILOG_FILE mux_5.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
