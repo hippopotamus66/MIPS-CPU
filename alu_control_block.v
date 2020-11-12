@@ -11,7 +11,7 @@ and_gate and1(.x(out1), .y(alu_op[1]), .z(alu_ctrl[0]));
 
 not_gate not1(.x(func[2]), .z(notfunc));
 not_gate not2(.x(alu_op[1]), .z(notalu));
-or_gate or2(.x(notfunc), .y(notalu), .z(ut1));
+or_gate or2(.x(notfunc), .y(notalu), .z(out1));
 and_gate and2(.x(out1), .y(alu_op[1]), .z(alu_ctrl[1]));
 
 and_gate and3(.x(func[1]), .y(alu_op[1]), .z(out2));

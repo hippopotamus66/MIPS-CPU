@@ -1,7 +1,8 @@
 module mips_cpu;
 
 
-reg [31:0] instruction, from_sign_extend, read_data_1, read_data_2, to_alu, alu_result, data, write_data, from_shift_mux, from_adder_pc, adder_result; 
+wire [31:0] from_sign_extend, read_data_1, read_data_2, to_alu, alu_result, data, write_data, from_shift_mux, from_adder_pc, adder_result; 
+wire [31:0] instruction;
 wire [1:0] alu_op;
 wire jump,reg_dst,mem_to_reg,branch,mem_read,mem_write,alu_src,reg_write;
 wire zero_from_alu, from_nand;
@@ -31,15 +32,16 @@ mux_5 mux_for_write_reg (.sel(reg_dst),
 								 .src1(instruction[15:11]), 
 								 .z(reg_dst_num));//The register destination number for the Write register comes from the rt field (bits 20:16). Otherwise from rd field.
 								 
-REG_FILE_NAME register(.read_reg_1(instruction[25:21]),
-								.read_reg_2(instruction[20:16]), 
-								.write_reg(reg_dst_num),
-								.write_data(write_data),
-								.read_data_1(read_data_1),
-								.read_data_2(read_data_2),
-								.write_en(reg_write));
+reg_file register(.Ra(instruction[25:21]),
+								.Rb(instruction[20:16]), 
+								.Rw(reg_dst_num),
+								.busW(write_data),
+								.busA(read_data_1),
+								.busB(read_data_2),
+								.RegWr(reg_write),//write_enable
+								.clk(clk));
 								
-SIGN_EXTEND_NAME sign_extend (.x(instruction[15:0]),
+extender sign_extend (.x(instruction[15:0]),
 										.z(from_sign_extend));
 				
 mux_32 mux_before_alu (.sel(alu_src), 
@@ -53,7 +55,7 @@ alu_control_block alu_ctrl (.func(instruction[5:0]),
 									 .alu_ctrl(alu_control_sig));		
 			
 			
-ALU_NAME alu_block (.ctrl(alu_control_sig), 
+ALU alu_block (.ctrl(alu_control_sig), 
 						  .A(read_data_1),
 						  .B(to_alu), 
 						  .shamt(),
@@ -69,7 +71,7 @@ mux_32 mux_after_data_mem (.sel(mem_to_reg),
 									.z(write_data));
 
 									
-sll_32 shift_2 (.x(from_sign_extend),
+sll_32bit shift_2 (.x(from_sign_extend),
 					 .shift(3'b010), //shfting left by 2
 					 .z(from_shift_mux));
 
