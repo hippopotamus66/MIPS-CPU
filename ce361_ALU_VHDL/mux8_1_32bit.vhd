@@ -4,7 +4,7 @@ use work.eecs361.mux_n;
 
 entity mux8_1_32bit is
   port (
-	sel   : in  std_logic_vector(2 downto 0);
+	sel   : in  std_logic_vector(3 downto 0);
 	src_in0  : in  std_logic_vector(31 downto 0);
 	src_in1  : in  std_logic_vector(31 downto 0);
 	src_in2  : in  std_logic_vector(31 downto 0);
@@ -75,4 +75,5 @@ begin
 				src1 => s5,
 	  			z => z
 				);
+	
  end architecture structural;

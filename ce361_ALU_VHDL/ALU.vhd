@@ -6,7 +6,7 @@ use work.eecs361.all;
 
 entity ALU is
   port (
-	ctrl   : in  std_logic_vector(2 downto 0);
+	ctrl   : in  std_logic_vector(3 downto 0);
 	A  : in  std_logic_vector(31 downto 0);
 	B  : in  std_logic_vector(31 downto 0);
 	shamt: in  std_logic_vector(4 downto 0);

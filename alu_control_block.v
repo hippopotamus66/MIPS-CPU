@@ -1,6 +1,6 @@
 module alu_control_block (func, alu_op, alu_ctrl);
-input [4:0] func; //this is the last (smallest) five bits from the 32 bit instruction
-input [2:0] alu_op; //from control block
+input [5:0] func; //this is the last (smallest) five bits from the 32 bit instruction
+input [1:0] alu_op; //from control block
 output [3:0] alu_ctrl; // to alu
 
 
