@@ -19,7 +19,9 @@ end reg_file_bitslice;
 architecture structural of reg_file_bitslice is
     signal outputs : std_logic_vector(31 downto 0);
     signal dec_res : std_logic_vector(31 downto 0);
-    
+    signal resa : std_logic;
+    signal resb : std_logic;
+
     component register_bitslice is
         port (
     busWi   : in std_logic;
@@ -39,9 +41,9 @@ architecture structural of reg_file_bitslice is
 
     component mux_32to1 is
   	port (
-		sel   : in  std_logic_vector(4 downto 0);
+		sel  : in  std_logic_vector(4 downto 0);
 		src  : in  std_logic_vector(31 downto 0);
-		z	    : out std_logic
+		z    : out std_logic
   		);
     end component;
 
@@ -49,7 +51,11 @@ begin
 
     dec_map  : dec_32 port map (src => Rw, z=> dec_res);
     reg_map : register_bitslice port map (busWi => busWi, Rw_dec => dec_res, RegWr => RegWr, clk => clk, outputs => outputs);
-    m321    : mux_32to1 port map (sel => Ra, src => outputs, z=> busAi);
-    m321_b  : mux_32to1 port map (sel => Rb, src => outputs, z=> busBi);
+    --outputs <= "11111111111111111111111111111111";
+    m321    : mux_32to1 port map (sel => Ra, src => outputs, z=> resa);
+    busAi <= resa;
+    m321_b  : mux_32to1 port map (sel => Rb, src => outputs, z=> resb);
+    busBi <= resb;
+    
 
 end architecture structural;

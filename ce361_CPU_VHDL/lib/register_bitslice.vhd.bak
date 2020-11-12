@@ -20,8 +20,9 @@ architecture structural of register_bitslice is
 	signal res1 : std_logic_vector(31 downto 0);    
 begin
     mux_map : mux_32 port map (sel => regWr, src0 => s32_0, src1 => s32_1, z => res);
-    and_map  : and_32 port map (x => res, y => Rw_dec, z => res1);
-    dffr_map : dffr_a port map (clk => clk, arst => '0', aload => '0', adata => '0', d => busWi, enable => res1(0), q => outputs(0));
+    and_map  : and_gate_32 port map (x => res, y => Rw_dec, z => res1);
+    --dffr_map : dffr_a port map (clk => clk, arst => '0', aload => '0', adata => '0', d => busWi, enable => res1(0), q => outputs(0));
+    outputs(0) <= 0;
     dffr_map1 : dffr_a port map (clk => clk, arst => '0', aload => '0', adata => '0', d => busWi, enable => res1(1), q => outputs(1));
     dffr_map2 : dffr_a port map (clk => clk, arst => '0', aload => '0', adata => '0', d => busWi, enable => res1(2), q => outputs(2));
     dffr_map3 : dffr_a port map (clk => clk, arst => '0', aload => '0', adata => '0', d => busWi, enable => res1(3), q => outputs(3));
