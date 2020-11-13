@@ -1,8 +1,8 @@
-module control_mechanism(opcode,alu_op, jump,reg_dst,mem_to_reg,branch,mem_read,mem_write,alu_src,reg_write);  
+module control_mechanism(opcode,alu_op, jump,reg_dst,mem_to_reg,branch,mem_read,mem_write,alu_src,reg_write, zero_inv);  
 
 input[5:0] opcode;  //bits 26:31 of instruction  
 wire notop0, notop1, notop2, notop3, notop4, notop5, r_format, lw, sw, beq;
-output jump, reg_dst,mem_to_reg,branch,mem_read,mem_write,alu_src,reg_write;
+output jump, reg_dst,mem_to_reg,branch,mem_read,mem_write,alu_src,reg_write, zero_inv;
 output [1:0] alu_op;
 
 not_gate not1(.x(opcode[0]), .z(notop0));
@@ -29,5 +29,6 @@ assign alu_op = {r_format, beq};
 or_gate or1 (.x(lw), .y(sw), .z(alu_src));
 or_gate or2 (.x(r_format), .y(lw), .z(reg_write));
 
-   
+//for jump
+and_gate andg (.x(alu_op[0]), .y(opcode[0]), .z(zero_inv));
 endmodule  

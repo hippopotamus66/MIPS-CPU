@@ -12,13 +12,12 @@ reg [31:0] ii;
 initial begin
 ii <= 0;
 pc <= 32'h00400020;
-en_inst_mem <= 1'b0;
+en_inst_mem <= 1'b1; //was 0
 end
 always @(posedge clk)
     begin
     	if (reset == 0) begin
-    		pc <= 32'h00400020;
-		
+    		pc <= 32'h00400020;	
 	end	
     	else
     		if (ii < 2) begin
