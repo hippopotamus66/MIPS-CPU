@@ -31,7 +31,8 @@ assign mem_read = lw;
 assign mem_write = sw;
 assign branch = jtype;
 assign alu_src = itype;
-assign alu_op = {rtype, jtype};
+assign alu_op [1] = rtype;
+assign alu_op [0] = jtype;
 
 
 endmodule
@@ -77,4 +78,5 @@ endmodule
 //
 ////for jump
 //and_gate andg (.x(alu_op[0]), .y(opcode[0]), .z(zero_inv));
+//endmodule
  

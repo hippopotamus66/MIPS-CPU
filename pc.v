@@ -20,14 +20,14 @@ always @(posedge clk)
     		pc <= 32'h00400020;	
 	end	
     	else
-    		if (ii < 2) begin
-		ii <= ii + 1;
-	 	end else begin
+    		//if (ii < 1) begin
+		//ii <= ii + 1;
+	 	//end else begin
 		if (en == 1'b1) begin //enable like sleep flag
 		en_inst_mem <= 1;
 		pc <= pc_next;  
 		ii <= 0;
 		end
-	end
+	//end
     end
 endmodule
