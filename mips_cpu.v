@@ -36,7 +36,8 @@ extender sign_extend (.x(instruction[15:0]),.z(from_sign_extend));
 mux_32 mux_before_alu (.sel(alu_src),  .src0(read_data_2), .src1(from_sign_extend),  .z(to_alu));
 							  
 
-alu_control_block alu_ctrl (.func(instruction[5:0]), .alu_op(alu_op),  .alu_ctrl(alu_control_sig));		
+//alu_control_block alu_ctrl (.func(instruction[5:0]), .alu_op(alu_op),  .alu_ctrl(alu_control_sig));		
+ALUCU alu_ctrl (.func(instruction[5:0]), .ALUOp(alu_op),  .ALUCtr(alu_control_sig));		
 			
 			
 ALU alu_block (.ctrl(alu_control_sig),  .A(read_data_1), .B(to_alu), .ze(zero_from_alu), .R(alu_result), .ovf(), .shamt(), .cout());
