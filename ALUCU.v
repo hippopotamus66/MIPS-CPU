@@ -1,7 +1,7 @@
-module ALUCU(ALUOp, func, ALUCtr);
+module ALUCU(ALUOp, func, ALUCtr, opcode);
     
     input [1:0] ALUOp;
-    input [5:0] func;
+    input [5:0] func, opcode;
     output reg [3:0] ALUCtr;
 
 //wire and_op, or_op, slt_signed_op, full_adder_signed_op, sll_op, sub_op, slt_u_op, fa_u_op; 
@@ -17,7 +17,11 @@ module ALUCU(ALUOp, func, ALUCtr);
    
 always @(*) begin
 	if (func == 6'b100100) begin 
-		 ALUCtr = 4'b0000; 
+		if (opcode == 6'b001000) begin
+			ALUCtr = 4'b0010; //addi
+		end else begin
+		 ALUCtr = 4'b0000; //and
+		end
 	end else if (func == 6'b100101) begin
 		 ALUCtr = 4'b0001; 
 	end else if (func == 6'b100000) begin
